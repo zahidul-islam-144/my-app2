@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  .verify_otp_main {
+    .otp_auth_block {
+      .otpFormBlock {
+        h1 {
+          @apply text-[#737270] font-semibold text-2xl text-center my-10;
+        }
+    
+      }
+    }
+  }
+}
+
+@layer components {
+  .verify_otp_main {
+    @apply h-screen flex justify-center items-center overflow-y-scroll;
+
+    .otp_auth_block {
+      @apply flex flex-col max-w-[35%] min-w-[30%] min-h-[80vh] bg-[#ffffff] border border-[#92919167] shadow-md rounded-lg;
+
+      .otpFormBlock {
+        @apply flex justify-center items-center flex-col;
+
+        .otpBtn {
+            @apply my-5;
+        }
+      }
+    }
+  }
+}

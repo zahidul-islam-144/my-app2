@@ -5,7 +5,6 @@ import {
   FormProvider,
   SubmitHandler,
   useForm,
-  Resolver,
 } from 'react-hook-form';
 
 type TFormConfig = {
@@ -37,6 +36,7 @@ const ReusableForm = ({
   const methods = useForm(formConfig);
 
   const submit: SubmitHandler<FieldValues> =  (data) => {
+    console.log('* data:2', data)
      onSubmit(data);
     methods.reset();
   };

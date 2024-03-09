@@ -6,6 +6,7 @@ const authApi = baseApi.injectEndpoints({
   endpoints: (builder:any) => ({
     signin: builder.mutation({
       query: (userPhnNumber:string) => {
+        console.log('* userPhone:', userPhnNumber)
         return {
           url: "/authentications/signin",
           method: "POST",
@@ -13,10 +14,18 @@ const authApi = baseApi.injectEndpoints({
         };
       },
     }),
+
+    verifyOtp: builder.mutation({ 
+      query: (data:any) => ({
+        url: '/authentications/verify-otp-reserve',
+        method: 'POST',
+        data,
+      }),
+    }),
   }),
 });
 
-export const { useSigninMutation } = authApi;
+export const { useSigninMutation, useVerifyOtpMutation } = authApi;
 
 
 

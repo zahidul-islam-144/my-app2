@@ -6,6 +6,7 @@ type TButtonProps = {
   onClick?: () => void | any;
   name?: string;
   disabled?: boolean;
+  className?: string;
 }
 
 type TProps = {
@@ -18,9 +19,10 @@ const ReusableButton = ({
   onClick,
   name,
   disabled = false,
+  className
 }: TProps) => {
   return (
-    <Button htmlType={type} onClick={onClick} name={name} disabled={disabled}>
+    <Button className={className} htmlType={type} onClick={onClick} name={name} disabled={disabled}>
      { toCapitalizeFirstLetter(content)}
     </Button>
   );
