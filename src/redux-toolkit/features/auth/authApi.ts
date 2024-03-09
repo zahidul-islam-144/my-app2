@@ -1,20 +1,22 @@
 import { baseApi } from "../../api/baseApi";
 
+
+
 const authApi = baseApi.injectEndpoints({
   endpoints: (builder:any) => ({
-    login: builder.mutation({
-      query: (userInfo:any) => {
+    signin: builder.mutation({
+      query: (userPhnNumber:string) => {
         return {
-          url: "/auth/login",
+          url: "/authentications/signin",
           method: "POST",
-          body: userInfo,
+          body: userPhnNumber,
         };
       },
     }),
   }),
 });
 
-export const { useLoginMutation } = authApi;
+export const { useSigninMutation } = authApi;
 
 
 

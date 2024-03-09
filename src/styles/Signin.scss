@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  .login_main.loginFormSection {
+    .auth_block {
+      .loginFormBlock {
+        h1 {
+          @apply text-[#737270] font-semibold text-2xl text-center my-10;
+        }
+        form {
+          @apply px-5;
+        }
+
+        form > button {
+          @apply h-10 w-full text-base;
+        }
+      }
+
+      .loginFormBottom_block {
+        h3 {
+          @apply text-[#737270] text-base;
+        }
+        div a {
+          @apply text-[#0958d9] text-base hover:underline;
+        }
+      }
+    }
+  }
+}
+
+@layer components {
+  .login_main.loginFormSection {
+    @apply h-screen flex justify-center items-center overflow-y-scroll;
+
+    .auth_block {
+      @apply flex flex-col max-w-[35%] min-w-[30%] min-h-[80vh] bg-[#ffffff] border border-[#92919167] shadow-md rounded-lg;
+
+      .loginFormBottom_block {
+        @apply flex xxs:flex-col xs:flex-col sm:flex-col md:flex-row md:justify-between items-center px-5 mt-10;
+      }
+    }
+  }
+}
